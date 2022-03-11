@@ -32,8 +32,4 @@ public class DataUtil {
 		System.out.println(res.getData().getCovid19Stats().size());
 		return res;
 	}
-	
-	public static void main(String[] args) throws URISyntaxException, JsonMappingException, JsonProcessingException {
-		getData();
-	}
 }
