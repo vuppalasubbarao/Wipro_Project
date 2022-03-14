@@ -10,4 +10,6 @@ public interface CoronaDataService {
 	CoronaDataResponse getEntireWorldData();
 	
 	CoronaDataResponse getDataByCountry(String countryName);
+	
+	CoronaDataResponse getDataByCountryByCount(String countryName, Integer count);
 }

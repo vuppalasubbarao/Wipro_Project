@@ -24,4 +24,10 @@ public class CoronaDataController {
 	public ResponseEntity<CoronaDataResponse> getDataForGivenCountry(@PathVariable("countryName") String countryName) {
 		return new ResponseEntity<>(coronaDataService.getDataByCountry(countryName), HttpStatus.OK);
 	}
+	
+	@GetMapping("/worldData/{countryName}/{noOfRecords}")
+	public ResponseEntity<CoronaDataResponse> getDataForGivenCountryByCount(@PathVariable("countryName") String countryName, 
+			@PathVariable("noOfRecords") Integer noOfRecords) {
+		return new ResponseEntity<>(coronaDataService.getDataByCountryByCount(countryName, noOfRecords), HttpStatus.OK);
+	}
 }

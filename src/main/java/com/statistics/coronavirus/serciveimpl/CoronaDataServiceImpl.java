@@ -47,4 +47,14 @@ public class CoronaDataServiceImpl implements CoronaDataService {
 		return response;
 	}
 
+	@Override
+	public CoronaDataResponse getDataByCountryByCount(String countryName, Integer count) {
+		CoronaDataResponse response = this.getDataByCountry(countryName);
+		List<Covid19Stats> results = response.getData().getCovid19Stats();
+		List<Covid19Stats> filteredResults = results.stream().limit(count).collect(Collectors.toList());
+		response.getData().getCovid19Stats().clear();
+		response.getData().setCovid19Stats(filteredResults);
+		return response;
+	}
+
 }
